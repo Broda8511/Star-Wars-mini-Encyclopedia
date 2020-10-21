@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Star-Wars-mini-Encyclopedia/static/css/main.1882200f.chunk.css",
+    "main.js": "/Star-Wars-mini-Encyclopedia/static/js/main.7e9d2b0f.chunk.js",
+    "main.js.map": "/Star-Wars-mini-Encyclopedia/static/js/main.7e9d2b0f.chunk.js.map",
+    "runtime-main.js": "/Star-Wars-mini-Encyclopedia/static/js/runtime-main.c037bf81.js",
+    "runtime-main.js.map": "/Star-Wars-mini-Encyclopedia/static/js/runtime-main.c037bf81.js.map",
+    "static/js/2.d8f434be.chunk.js": "/Star-Wars-mini-Encyclopedia/static/js/2.d8f434be.chunk.js",
+    "static/js/2.d8f434be.chunk.js.map": "/Star-Wars-mini-Encyclopedia/static/js/2.d8f434be.chunk.js.map",
+    "index.html": "/Star-Wars-mini-Encyclopedia/index.html",
+    "precache-manifest.7dae6f22b65bebbd70a24ef4c06296a6.js": "/Star-Wars-mini-Encyclopedia/precache-manifest.7dae6f22b65bebbd70a24ef4c06296a6.js",
+    "service-worker.js": "/Star-Wars-mini-Encyclopedia/service-worker.js",
+    "static/css/main.1882200f.chunk.css.map": "/Star-Wars-mini-Encyclopedia/static/css/main.1882200f.chunk.css.map",
+    "static/js/2.d8f434be.chunk.js.LICENSE.txt": "/Star-Wars-mini-Encyclopedia/static/js/2.d8f434be.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c037bf81.js",
+    "static/js/2.d8f434be.chunk.js",
+    "static/css/main.1882200f.chunk.css",
+    "static/js/main.7e9d2b0f.chunk.js"
+  ]
+}
