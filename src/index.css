@@ -110,6 +110,7 @@ main {
   background-color: #fbf8f84a;
   padding: 4px 4px;
   transition: all 0.5s ease;
+  flex-grow: 1;
 }
 
 nav ul a:hover {
