@@ -1,60 +1,94 @@
-import React, {Component} from 'react'; 
-import {Link} from 'react-router-dom';
+import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { selectVehicle } from "../store/actions/actions";
 
-class VehiclesSearch extends Component {
-    state = {
-        query: "",
-        vehicles: []
-    };
+class VehicleSearch extends Component {
+  state = {
+    query: "",
+    vehicles: [],
+  };
 
-    onChange = e => {
-        const {value} = e.target;
-        this.setState({
-        query: value
-        });
+  onChange = (e) => {
+    const { value } = e.target;
+    this.setState({
+      query: value,
+    });
 
-        this.search(value);
-    };
+    this.search(value);
+  };
 
-    search = query => {
-        const url = `https://swapi.dev/api/vehicles?search=${query}`;
+  search = (query) => {
+    const url = `https://swapi.dev/api/vehicles?search=${query}`;
 
     fetch(url)
-        .then(results => results.json())
-        .then(data => {
-            this.setState({ vehicles: data.results });
-        });
-    };
+      .then((results) => results.json())
+      .then((data) => {
+        this.setState({ vehicles: data.results });
+      });
+  };
 
-    componentDidMount() {
-        this.search("");
-    }
+  componentDidMount() {
+    this.search("");
+  }
 
-    render() {
+  render() {
     return (
+      <>
         <form>
-        <input
+          <input
             type="text"
             className="searchbox-input"
             placeholder="start typing..."
             onChange={this.onChange}
-        />
-        {this.state.vehicles.map(vehicle => (
-            <ul key={vehicle.name}>
-                <div className="card_info">
-                    <div className="vehicle_title">{vehicle.name}</div>
-                    <div className="vehicle_model">Model: {vehicle.model}</div>
-                    <div className="vehicle_length">Total length: {vehicle.length}</div>
-                    <div className="vehicle_crew">Crew: {vehicle.crew}</div>
-                    <div className="vehicle_manufacturer">Manufaturer: {vehicle.manufacturer}</div>
-                    <div className="vehicle_passengers">No. of passengers: {vehicle.passengers}</div>
-                    <Link to={'/vehicle/' + vehicle.name} key={vehicle.created} title={vehicle.name} {...vehicle}>More info</Link>
+          />
+          <div className="card">
+            {this.state.vehicles.map((vehicle) => (
+              <ul
+                key={vehicle.name}
+                onClick={() => this.props.selectVehicle(vehicle)}
+              >
+                <div className="card_info_vehicles">
+                  <div className="vehicle_title">{vehicle.name}</div>
+                  <div className="vehicle_model">Model: {vehicle.model}</div>
+                  <div className="vehicle_length">
+                    Total length: {vehicle.length}
+                  </div>
+                  <div className="vehicle_crew">Crew: {vehicle.crew}</div>
+                  <div className="vehicle_consumables">
+                    Consumables: {vehicle.consumables}
+                  </div>
+
+                  <div className="vehicle_passengers">
+                    No. of passengers: {vehicle.passengers}
+                  </div>
+                  <Link
+                    className="details_link"
+                    to={`/vehicles/${vehicle.name}`}
+                  >
+                    More info
+                  </Link>
                 </div>
-            </ul>
-        ))}
+              </ul>
+            ))}
+          </div>
         </form>
+      </>
     );
-    }
+  }
+}
+function mapStateToProps(state) {
+  return { vehicles: state.vehicles };
 }
 
-export default VehiclesSearch
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      selectVehicle: selectVehicle,
+    },
+    dispatch
+  );
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(VehicleSearch);

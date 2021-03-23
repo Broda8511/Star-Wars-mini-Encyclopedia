@@ -1,60 +1,95 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { selectPlanet } from "../store/actions/actions";
 
 class PlanetSearch extends Component {
-    state = {
-        query: "",
-        planets: []
-    };
+  state = {
+    query: "",
+    planets: [],
+  };
 
-    onChange = e => {
-        const {value} = e.target;
-        this.setState({
-        query: value
-        });
+  onChange = (e) => {
+    const { value } = e.target;
+    this.setState({
+      query: value,
+    });
 
-        this.search(value);
-    };
+    this.search(value);
+  };
 
-    search = query => {
-        const url = `https://swapi.dev/api/planets?search=${query}`;
+  search = (query) => {
+    const url = `https://swapi.dev/api/planets?search=${query}`;
 
     fetch(url)
-        .then(results => results.json())
-        .then(data => {
-            this.setState({ planets: data.results });
-        });
-    };
+      .then((results) => results.json())
+      .then((data) => {
+        this.setState({ planets: data.results });
+      });
+  };
 
-    componentDidMount() {
-        this.search("");
-    }
+  componentDidMount() {
+    this.search("");
+  }
 
-    render() {
+  render() {
     return (
+      <>
         <form>
-        <input
+          <input
             type="text"
             className="searchbox-input"
             placeholder="start typing..."
             onChange={this.onChange}
-        />
-        {this.state.planets.map(planet => (
-            <ul key={planet.name}>
-                <div className="card_info">
-                    <div className="planet_title">{planet.name}</div>
-                    <div className="planet_climate">Climate: {planet.climate}</div>
-                    <div className="planet_population">Population: {planet.population}</div>
-                    <div className="planet_terrain">Terrain: {planet.terrain}</div>
-                    <div className="planet_diameter">Diameter: {planet.diameter}</div>
-                    <div className="planet_gravity">Gravity: {planet.gravity}</div>
-                    <Link to={'/planet/' + planet.name} key={planet.created} title={planet.name} {...planet}>More info</Link>
+          />
+          <div className="card">
+            {this.state.planets.map((planet) => (
+              <ul
+                key={planet.name}
+                onClick={() => this.props.selectPlanet(planet)}
+              >
+                <div className="card_info_planets">
+                  <div className="planet_title">{planet.name}</div>
+                  <div className="planet_climate">
+                    Climate: {planet.climate}
+                  </div>
+                  <div className="planet_population">
+                    Population: {planet.population}
+                  </div>
+                  <div className="planet_terrain">
+                    Terrain: {planet.terrain}
+                  </div>
+                  <div className="planet_diameter">
+                    Diameter: {planet.diameter}
+                  </div>
+                  <div className="planet_gravity">
+                    Gravity: {planet.gravity}
+                  </div>
+                  <Link className="details_link" to={`/planets/${planet.name}`}>
+                    More info
+                  </Link>
                 </div>
-            </ul>
-        ))}
+              </ul>
+            ))}
+          </div>
         </form>
+      </>
     );
-    }
+  }
 }
 
-export default PlanetSearch
+function mapStateToProps(state) {
+  return { planets: state.planets };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      selectPlanet: selectPlanet,
+    },
+    dispatch
+  );
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlanetSearch);

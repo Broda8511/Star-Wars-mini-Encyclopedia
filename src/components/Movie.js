@@ -1,10 +1,8 @@
-import React from 'react';
-import MovieSearch from '../search/MovieSearch';
+import React from "react";
+import MovieSearch from "../search/MovieSearch";
 
-function Movie() {
-    return (
-        <MovieSearch/>
-    )
+function Movie(props) {
+  return <MovieSearch />;
 }
 
-export default Movie
+export default Movie;

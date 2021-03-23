@@ -1,3 +1,7 @@
+/*-------------------------------------*/
+/*    MAIN      */
+/*-------------------------------------*/
+
 * {
   margin: 0;
   padding: 0;
@@ -7,28 +11,44 @@
 
 body {
   background-color: #fff;
-  background-image: url(https://images.unsplash.com/photo-1547700055-b61cacebece9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://images.unsplash.com/photo-1547700055-b61cacebece9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
   background-attachment: fixed;
   background-size: cover;
   color: #fff;
-  font-family: 'Piazzolla', serif;
+  font-family: "Piazzolla", serif;
 }
 
-
+/*-------------------------------------*/
+/*    HEADER      */
+/*-------------------------------------*/
 
 header {
-  margin: 50px auto;
-}
-
-header h1 {
-  font-size: 55px;
+  margin: 0 auto;
 }
 
 header p {
-  font-size: 32px;
+  font-size: 25px;
   color: #fff;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
+
+main {
+  margin: 0 auto;
+  min-height: 120vh;
+}
+
+/*-------------------------------------*/
+/*    LOGO      */
+/*-------------------------------------*/
+
+.logo {
+  width: 45%;
+}
+
+/*-------------------------------------*/
+/*    SEARCHBOX      */
+/*-------------------------------------*/
 
 .searchbox-form {
   display: grid;
@@ -39,7 +59,6 @@ header p {
 
 .searchbox-input {
   background-color: transparent;
-  /* border-radius: 15px; */
   display: block;
   border: none;
   margin: 20px auto 11px auto;
@@ -55,160 +74,593 @@ header p {
   font-weight: 600;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
   color: #000;
 }
 
-.searchbox-button {
-  display: block;
-  width: 76%;
-  height: 30px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  background-color: #3c3c3c;
-  color: #fff;
+/*-------------------------------------*/
+/*    NAVIGATION      */
+/*-------------------------------------*/
+
+.nav {
+  display: flex;
+  align-content: center;
+  text-decoration: none;
 }
 
 .nav-link {
-  display: block;
-  width: 55%;
   margin: 0 auto;
-  text-decoration: none;
 }
 
 .nav-ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-gap: 10px 10px;
-  gap: 10px 10px;
+  gap: 1px;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-wrap: wrap;
 }
 
-nav ul a {
+.nav-ul a {
   color: #000;
+  width: 80px;
   font-weight: 700;
+  font-size: 0.9em;
   text-decoration: none;
-  background-color: #ffffffaf;
-  border-radius: 4px;
-  padding: 4px 0;
-  transition: all .5s ease;
+  background-color: #fbf8f84a;
+  padding: 4px 4px;
+  transition: all 0.5s ease;
 }
 
 nav ul a:hover {
-  letter-spacing: 2px;
   background-color: #fff;
 }
 
-.movie_info {
+/*-------------------------------------*/
+/*    HOME      */
+/*-------------------------------------*/
+
+.home_info {
   color: #000;
-  justify-items: center;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #ffffffaf;
-  width: 85%;
-  font-family: 'Lato', sans-serif;
-  padding: 10px;
+  margin: 25px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 70%;
+  font-family: "Lato", sans-serif;
   display: grid;
   align-items: end;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-                0 2px 4px rgba(0,0,0,0.07), 
-                0 4px 8px rgba(0,0,0,0.07), 
-                0 8px 16px rgba(0,0,0,0.07),
-                0 16px 32px rgba(0,0,0,0.07), 
-                0 32px 64px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 7%),
+    0 4px 8px rgb(0 0 0 / 7%), 0 8px 16px rgb(0 0 0 / 7%),
+    0 16px 32px rgb(0 0 0 / 7%), 0 32px 64px rgb(0 0 0 / 7%);
+  transition: all 0.5s ease;
+}
+
+.home_info img {
+  width: 70%;
+  margin: 15px 0 10px 0;
+}
+
+.home_info h2 {
+  margin: 10px 0 5px 0;
+}
+.home_info span {
+  margin: 5px 0;
+}
+
+/*-------------------------------------*/
+/*    CARD INFO      */
+/*-------------------------------------*/
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  gap: 20px;
+  margin: 20px;
 }
 
 .card_info {
   color: #000;
+  min-width: 300px;
+  border-radius: 9px;
+  overflow: hidden;
   justify-items: center;
-  margin: 25px auto;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.753);
-  background: linear-gradient(0deg, rgb(255 255 255 / 74%) 0%, rgba(186,186,186,1) 100%);
-  width: 60%;
-  font-family: 'Lato', sans-serif;
-  padding: 10px;
-  display: grid;
-  align-items: end;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-                0 2px 4px rgba(0,0,0,0.07), 
-                0 4px 8px rgba(0,0,0,0.07), 
-                0 8px 16px rgba(0,0,0,0.07),
-                0 16px 32px rgba(0,0,0,0.07), 
-                0 32px 64px rgba(0,0,0,0.07);
-  transition: all .5s ease;
+  margin: 0px auto;
+  backdrop-filter: blur(9px);
+  background-color: #ffffff67;
+  width: 50%;
+  min-height: 300px;
+  font-family: "Lato", sans-serif;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card_info div {
   margin-bottom: 8px;
 }
 
-.card_info:hover {
-  background-color:#ffffff;
-}
+/*-------------------------------------*/
+/*    CARD INFO DETAILS      */
+/*-------------------------------------*/
 
-.card_info h2 {
-  font-size: 35px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.card_info img {
-  margin-top: 15px;
-}
-
-.card_info a {
+.card_info_details {
   color: #000;
-  font-weight: 700;
-  text-decoration: none;
-  background-color: #ffffffaf;
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin-top: 8px;
+  justify-items: center;
+  margin: 25px auto;
+  backdrop-filter: blur(9px);
+  background-color: #ffffffb6;
+  width: 50%;
+  font-family: "Lato", sans-serif;
+  display: grid;
+  align-items: end;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  gap: 10px;
+  padding: 0 0 20px 0;
+  background-color: #eee;
 }
 
-.movie_title, .person_title, .planet_title, .spec_title, .starship_title, .vehicle_title {
-  font-size: 28px;
+/*-------------------------------------*/
+/*    BUTTONS, LINKS      */
+/*-------------------------------------*/
+
+.details_link {
+  display: block;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 3px 0;
+  width: 80px;
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  margin-bottom: 5px;
+  border: 1px solid;
+  transition: all 0.5s ease;
+}
+
+.details_link:hover {
+  border: 1px solid #fff;
+  color: #fff;
+  background: #000;
+}
+
+.back_link {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  padding: 5px 30px;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  border: 1px solid #fff;
+  transition: all 0.5s ease;
+}
+
+.back_link:hover {
+  border: 1px solid #000;
+  color: #000;
+  background: #fff;
+}
+
+/*-------------------------------------*/
+/*    MOVIES, PEOPLE, PLANETS, SPECIES, STARSHIPS, VEHICLES      */
+/*-------------------------------------*/
+
+.person_title,
+.planet_title,
+.species_title,
+.starship_title,
+.vehicle_title {
+  height: 50px;
+  font-size: 1.5rem;
   margin-bottom: 10px;
   font-weight: 700;
+  background-color: #fff;
+  width: 100%;
+  padding: 7px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 7%),
+    0 4px 8px rgb(0 0 0 / 7%), 0 8px 16px rgb(0 0 0 / 7%),
+    0 16px 32px rgb(0 0 0 / 7%), 0 32px 64px rgb(0 0 0 / 7%);
+  justify-items: center;
+  align-items: center;
+  display: grid;
 }
 
-.movie_release {
-  font-size: 12px;
+/*-------------------------------------*/
+/*    MOVIES      */
+/*-------------------------------------*/
+
+.card_info_movies {
+  color: #000;
+  min-width: 300px;
+  border-radius: 9px;
+  overflow: hidden;
+  justify-items: center;
+  margin: 0px auto;
+  backdrop-filter: blur(9px);
+  background-color: #ffffff67;
+  width: 50%;
+  min-height: 300px;
+  font-family: "Lato", sans-serif;
+  align-items: center;
+  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px; */
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card_info_movies_details {
+  color: #000;
+  justify-items: center;
+  margin: 25px auto;
+  backdrop-filter: blur(9px);
+  background-color: #eee;
+  width: 50%;
+  font-family: "Lato", sans-serif;
+  align-items: end;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease;
+  padding: 0 0 20px 0;
+}
+
+.movie_title {
+  height: 40px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  background-color: #fff;
+  width: 100%;
+  padding: 7px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 7%),
+    0 4px 8px rgb(0 0 0 / 7%), 0 8px 16px rgb(0 0 0 / 7%),
+    0 16px 32px rgb(0 0 0 / 7%), 0 32px 64px rgb(0 0 0 / 7%);
+}
+
+.movie_release,
+.movie_producer,
+.movie_director {
+  font-size: 15px;
   margin-bottom: 10px;
   color: #202020;
+  font-weight: 700;
 }
 
 .movie_plot {
-  font-size: 18px;
+  font-size: 13px;
   margin-bottom: 10px;
   color: #000000;
   padding: 15px 25px;
+  flex-grow: 1;
 }
 
-.movie_producer {
-  font-size: 12px;
+/*-------------------------------------*/
+/*    PEOPLE      */
+/*-------------------------------------*/
+
+.card_info_people {
+  color: #000;
+  min-width: 300px;
+  border-radius: 9px;
+  overflow: hidden;
+  justify-items: center;
+  margin: 0px auto;
+  backdrop-filter: blur(9px);
+  background-color: #ffffff67;
+  width: 50%;
+  min-height: 300px;
+  font-family: "Lato", sans-serif;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card_info_people_details {
+  color: #000;
+  justify-items: center;
+  margin: 25px auto;
+  backdrop-filter: blur(9px);
+  background-color: #eee;
+  width: 50%;
+  font-family: "Lato", sans-serif;
+  align-items: end;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease;
+  padding: 0 0 20px 0;
+}
+
+.person_title {
+  height: 60px;
+}
+
+.person_title p {
+  font-size: 1rem;
+  color: #8a8a8a;
+}
+
+.person_birth,
+.person_eye,
+.person_hair,
+.person_skin,
+.person_mass,
+.person_height,
+.person_birth,
+.person_gender {
+  font-size: 15px;
   margin-bottom: 10px;
-  color: #3b3b3b;
+  color: #202020;
+  font-weight: 700;
 }
 
-.movies-details, .people-details, .planets-details, .species-details, .starships-details, .vehicles-details {
+/*-------------------------------------*/
+/*    PLANETS      */
+/*-------------------------------------*/
+
+.card_info_planets {
   color: #000;
-  font-weight: 700;
-  text-decoration: none;
-  /* background-color: #ffffffaf; */
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin: 10px 0;
+  min-width: 300px;
+  border-radius: 9px;
+  overflow: hidden;
+  justify-items: center;
+  margin: 0px auto;
+  backdrop-filter: blur(9px);
+  background-color: #ffffff67;
+  width: 50%;
+  min-height: 300px;
+  font-family: "Lato", sans-serif;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.movies-details a, .people-details a, .planets-details a, .species-details a, .starships-details a, .vehicles-details a {
+.card_info_planets_details {
   color: #000;
+  justify-items: center;
+  margin: 25px auto;
+  backdrop-filter: blur(9px);
+  background-color: #eee;
+  width: 50%;
+  font-family: "Lato", sans-serif;
+  align-items: end;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease;
+  padding: 0 0 20px 0;
+}
+
+.planet_climate,
+.planet_population,
+.planet_terrain,
+.planet_diameter,
+.planet_gravity,
+.planet_height,
+.planet_birth,
+.planet_rotation,
+.planet_orbital,
+.planet_gender {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #202020;
   font-weight: 700;
-  text-decoration: none;
-  background-color: #ffffffaf;
-  border-radius: 4px;
-  padding: 4px 8px;
+}
+
+/*-------------------------------------*/
+/*    SPECIES      */
+/*-------------------------------------*/
+
+.card_info_species {
+  color: #000;
+  min-width: 300px;
+  border-radius: 9px;
+  overflow: hidden;
+  justify-items: center;
+  margin: 0px auto;
+  backdrop-filter: blur(9px);
+  background-color: #ffffff67;
+  width: 50%;
+  min-height: 300px;
+  font-family: "Lato", sans-serif;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card_info_species_details {
+  color: #000;
+  justify-items: center;
+  margin: 25px auto;
+  backdrop-filter: blur(9px);
+  background-color: #eee;
+  width: 50%;
+  font-family: "Lato", sans-serif;
+  align-items: end;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease;
+  padding: 0 0 20px 0;
+}
+
+.spec_classification,
+.spec_designation,
+.spec_average,
+.spec_skin,
+.spec_hair,
+.spec_eye,
+.spec_lifespan,
+.spec_language {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #202020;
+  font-weight: 700;
+}
+
+/*-------------------------------------*/
+/*    STARSHIPS      */
+/*-------------------------------------*/
+
+.card_info_starships {
+  color: #000;
+  min-width: 300px;
+  border-radius: 9px;
+  overflow: hidden;
+  justify-items: center;
+  margin: 0px auto;
+  backdrop-filter: blur(9px);
+  background-color: #ffffff67;
+  width: 50%;
+  min-height: 300px;
+  font-family: "Lato", sans-serif;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card_info_starships_details {
+  color: #000;
+  justify-items: center;
+  margin: 25px auto;
+  backdrop-filter: blur(9px);
+  background-color: #eee;
+  width: 50%;
+  font-family: "Lato", sans-serif;
+  align-items: end;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease;
+  padding: 0 0 20px 0;
+}
+
+.starship_model,
+.starship_manufacturer,
+.starship_length,
+.starship_crew,
+.starship_passengers,
+.starship_consumables,
+.starship_mglt,
+.starship_cost,
+.starship_speed,
+.starship_rating,
+.starship_class,
+.starship_cargo {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #202020;
+  font-weight: 700;
+  padding: 0 10px;
+}
+
+.starship_title {
+  height: 70px;
+}
+
+/*-------------------------------------*/
+/*    VEHICLES      */
+/*-------------------------------------*/
+
+.card_info_vehicles {
+  color: #000;
+  min-width: 300px;
+  border-radius: 9px;
+  overflow: hidden;
+  justify-items: center;
+  margin: 0px auto;
+  backdrop-filter: blur(9px);
+  background-color: #ffffff67;
+  width: 50%;
+  min-height: 300px;
+  font-family: "Lato", sans-serif;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card_info_vehicles_details {
+  color: #000;
+  justify-items: center;
+  margin: 25px auto;
+  backdrop-filter: blur(9px);
+  background-color: #eee;
+  width: 50%;
+  font-family: "Lato", sans-serif;
+  align-items: end;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease;
+  padding: 0 0 20px 0;
+}
+
+.vehicle_title {
+  height: 70px;
+  justify-items: center;
+  align-items: center;
+  display: grid;
+}
+
+.vehicle_model,
+.vehicle_manufacturer,
+.vehicle_length,
+.vehicle_crew,
+.vehicle_passengers,
+.vehicle_consumables,
+.vehicle_cost,
+.vehicle_class,
+.vehicle_cargo {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #202020;
+  font-weight: 700;
+  padding: 0 10px;
+}
+
+/*-------------------------------------*/
+/*    FOOTER      */
+/*-------------------------------------*/
+
+footer {
+  background: #ffffff;
+  color: #000;
+  padding: 5px 0;
 }
