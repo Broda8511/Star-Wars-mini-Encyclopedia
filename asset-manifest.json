@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Star-Wars-mini-Encyclopedia/static/css/main.4be96564.chunk.css",
-    "main.js": "/Star-Wars-mini-Encyclopedia/static/js/main.db49f9fb.chunk.js",
-    "main.js.map": "/Star-Wars-mini-Encyclopedia/static/js/main.db49f9fb.chunk.js.map",
+    "main.css": "/Star-Wars-mini-Encyclopedia/static/css/main.c36e88c7.chunk.css",
+    "main.js": "/Star-Wars-mini-Encyclopedia/static/js/main.2494638f.chunk.js",
+    "main.js.map": "/Star-Wars-mini-Encyclopedia/static/js/main.2494638f.chunk.js.map",
     "runtime-main.js": "/Star-Wars-mini-Encyclopedia/static/js/runtime-main.c037bf81.js",
     "runtime-main.js.map": "/Star-Wars-mini-Encyclopedia/static/js/runtime-main.c037bf81.js.map",
     "static/js/2.fe8e0101.chunk.js": "/Star-Wars-mini-Encyclopedia/static/js/2.fe8e0101.chunk.js",
     "static/js/2.fe8e0101.chunk.js.map": "/Star-Wars-mini-Encyclopedia/static/js/2.fe8e0101.chunk.js.map",
     "index.html": "/Star-Wars-mini-Encyclopedia/index.html",
-    "precache-manifest.e19d6f0c502412b7c590d297495035f1.js": "/Star-Wars-mini-Encyclopedia/precache-manifest.e19d6f0c502412b7c590d297495035f1.js",
+    "precache-manifest.5470e355ea3f566611fb27390a6a682e.js": "/Star-Wars-mini-Encyclopedia/precache-manifest.5470e355ea3f566611fb27390a6a682e.js",
     "service-worker.js": "/Star-Wars-mini-Encyclopedia/service-worker.js",
-    "static/css/main.4be96564.chunk.css.map": "/Star-Wars-mini-Encyclopedia/static/css/main.4be96564.chunk.css.map",
+    "static/css/main.c36e88c7.chunk.css.map": "/Star-Wars-mini-Encyclopedia/static/css/main.c36e88c7.chunk.css.map",
     "static/js/2.fe8e0101.chunk.js.LICENSE.txt": "/Star-Wars-mini-Encyclopedia/static/js/2.fe8e0101.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/Star-Wars-mini-Encyclopedia/static/media/logo.eeba7aab.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c037bf81.js",
     "static/js/2.fe8e0101.chunk.js",
-    "static/css/main.4be96564.chunk.css",
-    "static/js/main.db49f9fb.chunk.js"
+    "static/css/main.c36e88c7.chunk.css",
+    "static/js/main.2494638f.chunk.js"
   ]
 }
