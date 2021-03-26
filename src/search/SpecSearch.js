@@ -45,7 +45,7 @@ class SpecSearch extends Component {
           <div className="card">
             {this.state.species.map((spec) => (
               <ul key={spec.name} onClick={() => this.props.selectSpec(spec)}>
-                <div className="card_info">
+                <div className="card_info_species">
                   <div className="species_title">{spec.name}</div>
                   <div className="spec_language">Language: {spec.language}</div>
                   <div className="spec_classification">

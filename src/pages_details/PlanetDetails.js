@@ -9,25 +9,25 @@ class PlanetDetails extends Component {
       <div className="card_info_planets_details">
         <div className="planet_title">{this.props.planet.name}</div>
         <div className="planet_climate">
-          Climate: {this.props.planet.climate}
+          <p>Climate</p> {this.props.planet.climate}
         </div>
         <div className="planet_population">
-          Population: {this.props.planet.population}
+          <p>Population</p> {this.props.planet.population}
         </div>
         <div className="planet_terrain">
-          Terrain: {this.props.planet.terrain}
+          <p>Terrain</p> {this.props.planet.terrain}
         </div>
         <div className="planet_diameter">
-          Diameter: {this.props.planet.diameter}
+          <p>Diameter</p> {this.props.planet.diameter}
         </div>
         <div className="planet_gravity">
-          Gravity: {this.props.planet.gravity}
+          <p>Gravity</p> {this.props.planet.gravity}
         </div>
         <div className="planet_rotation">
-          Rotation period: {this.props.planet.rotation_period}
+          <p>Rotation period</p> {this.props.planet.rotation_period}
         </div>
         <div className="planet_orbital">
-          Orbital period: {this.props.planet.orbital_period}
+          <p>Orbital period</p> {this.props.planet.orbital_period}
         </div>
         <Link className="back_link" to="/planets">
           Back

@@ -43,7 +43,7 @@ class MovieSearch extends Component {
             placeholder="start typing..."
             onChange={this.onChange}
           />
-          <div className="card">
+          <div className="card_movies">
             {this.state.movies.map((movie) => (
               <ul
                 key={movie.title}
@@ -55,7 +55,7 @@ class MovieSearch extends Component {
                     Release date: {movie.release_date}
                   </div>
                   <div className="movie_producer">
-                    Producer: {movie.producer}
+                    Producer: {movie.producer.slice(0, 30)}...
                   </div>
                   <div className="movie_director">
                     Director: {movie.director}

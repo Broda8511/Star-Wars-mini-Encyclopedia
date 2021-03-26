@@ -9,15 +9,19 @@ class MovieDetails extends Component {
       <div className="card_info_movies_details">
         <div className="movie_title">{this.props.movie.title}</div>
         <div className="movie_release">
-          Release date: {this.props.movie.release_date}
+          <p>Release date </p>
+          {this.props.movie.release_date}
         </div>
         <div className="movie_director">
-          Director: {this.props.movie.director}
+          <p>Director</p> {this.props.movie.director}
         </div>
         <div className="movie_producer">
-          Producer: {this.props.movie.producer}
+          <p>Producer</p> {this.props.movie.producer}
         </div>
-        <div className="movie_plot">{this.props.movie.opening_crawl}</div>
+        <div className="movie_plot">
+          <p>Opening crawl</p>
+          {this.props.movie.opening_crawl}
+        </div>
         <Link className="back_link" to="/movies">
           Back
         </Link>

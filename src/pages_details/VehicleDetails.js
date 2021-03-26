@@ -8,28 +8,32 @@ class VehicleDetails extends Component {
     return (
       <div className="card_info_vehicles_details">
         <div className="vehicle_title">{this.props.vehicle.name}</div>
-        <div className="vehicle_model">Model: {this.props.vehicle.model}</div>
-        <div className="vehicle_length">
-          Total length: {this.props.vehicle.length}
+        <div className="vehicle_model">
+          <p>Model</p> {this.props.vehicle.model}
         </div>
-        <div className="vehicle_crew">Crew: {this.props.vehicle.crew}</div>
+        <div className="vehicle_length">
+          <p>Total length</p> {this.props.vehicle.length}
+        </div>
+        <div className="vehicle_crew">
+          <p>Crew</p> {this.props.vehicle.crew}
+        </div>
         <div className="vehicle_manufacturer">
-          Manufaturer: {this.props.vehicle.manufacturer}
+          <p>Manufaturer</p> {this.props.vehicle.manufacturer}
         </div>
         <div className="vehicle_passengers">
-          No. of passengers: {this.props.vehicle.passengers}
+          <p>No. of passengers</p> {this.props.vehicle.passengers}
         </div>
         <div className="vehicle_cost">
-          Cost (in credits): {this.props.cost_in_credits}
+          <p>Cost (in credits)</p> {this.props.cost_in_credits}
         </div>
         <div className="vehicle_cargo">
-          Cargo capacity: {this.props.cargo_capacity}
+          <p>Cargo capacity</p> {this.props.cargo_capacity}
         </div>
         <div className="vehicle_consumables">
-          Consumables: {this.props.vehicle.consumables}
+          <p>Consumables</p> {this.props.vehicle.consumables}
         </div>
         <div className="vehicle_class">
-          Vehicle class: {this.props.vehicle.vehicle_class}
+          <p>Vehicle class</p> {this.props.vehicle.vehicle_class}
         </div>
         <Link className="back_link" to="/vehicles">
           Back

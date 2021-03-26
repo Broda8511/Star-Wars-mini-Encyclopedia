@@ -8,35 +8,42 @@ class StarshipDetails extends Component {
     return (
       <div className="card_info_starships_details">
         <div className="starship_title">{this.props.starship.name}</div>
-        <div className="starship_model">Model: {this.props.starship.model}</div>
+        <div className="starship_model">
+          <p>Model</p> {this.props.starship.model}
+        </div>
         <div className="starship_manufacturer">
-          Manufacturer: {this.props.starship.manufacturer}
+          <p>Manufacturer</p> {this.props.starship.manufacturer}
         </div>
         <div className="starship_length">
-          Length: {this.props.starship.length}
+          <p>Length</p> {this.props.starship.length}
         </div>
-        <div className="starship_crew">Crew: {this.props.starship.crew}</div>
+        <div className="starship_crew">
+          <p>Crew</p> {this.props.starship.crew}
+        </div>
         <div className="starship_passengers">
-          Passengers: {this.props.starship.passengers}
+          <p>Passengers</p> {this.props.starship.passengers}
         </div>
         <div className="starship_consumables">
-          Consumables: {this.props.starship.consumables}
+          <p>Consumables</p> {this.props.starship.consumables}
         </div>
-        <div className="starship_mglt">MGLT: {this.props.starship.MGLT}</div>
+        <div className="starship_mglt">
+          <p>MGLT</p> {this.props.starship.MGLT}
+        </div>
         <div className="starship_cost">
-          Cost: (in credits){this.props.starship.cost_in_credits}
+          <p>Cost (in credits)</p>
+          {this.props.starship.cost_in_credits}
         </div>
         <div className="starship_speed">
-          Max atm. speed: {this.props.starship.max_atmosphering_speed}
+          <p>Max atm. speed</p> {this.props.starship.max_atmosphering_speed}
         </div>
         <div className="starship_rating">
-          Hyperdrive rating: {this.props.starship.hyperdrive_rating}
+          <p>Hyperdrive rating</p> {this.props.starship.hyperdrive_rating}
         </div>
         <div className="starship_class">
-          Starship class: {this.props.starship.starship_class}
+          <p>Starship class</p> {this.props.starship.starship_class}
         </div>
         <div className="starship_cargo">
-          Cargo capacity: {this.props.starship.cargo_capacity}
+          <p>Cargo capacity</p> {this.props.starship.cargo_capacity}
         </div>
 
         <Link className="back_link" to="/starships">
